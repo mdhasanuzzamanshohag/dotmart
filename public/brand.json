@@ -1,0 +1,32 @@
+[
+  {
+    "Id": "1",
+    "brand_name": "Apple",
+    "brand_logo": "https://i.ibb.co/bvP9VQH/1685279753620.png"
+  },
+  {
+    "Id": "2",
+    "brand_name": "Samsung",
+    "brand_logo": "https://i.ibb.co/tcW7SNV/samsung-group-logo-brandlogos-net-mbvij-512x512.png"
+  },
+  {
+    "Id": "3",
+    "brand_name": "Sony",
+    "brand_logo": "https://i.ibb.co/swCq2zv/Sony-logo-svg.png"
+  },
+  {
+    "Id": "4",
+    "brand_name": "Google",
+    "brand_logo": "https://i.ibb.co/0YqXF35/Google-logo.png"
+  },
+  {
+    "Id": "5",
+    "brand_name": "Intel",
+    "brand_logo": "https://i.ibb.co/T1H6hvG/Intel-logo-2022.png"
+  },
+  {
+    "Id": "6",
+    "brand_name": "Xiomi",
+    "brand_logo": "https://i.ibb.co/x8McYTN/kisspng-xiaomi-mi-max-logo-brand-smartphone-5c9d9b2012d310-2901199615538327360771-removebg-preview.png"
+  }
+]
