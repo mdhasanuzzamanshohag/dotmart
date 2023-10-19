@@ -1,6 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+
+  
+  
     return (
       <div className="navbar bg-base-100 w-[80%] mx-auto">
         <div className="navbar-start">
@@ -64,6 +67,7 @@ const Navbar = () => {
             Button
           </Link>
         </div>
+        
       </div>
     );
 };

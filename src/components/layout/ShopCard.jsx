@@ -26,9 +26,11 @@ const ShopCard = ({ produts }) => {
           <h2 className="text-xl font-semibold">
             <span className="text-[#606060]">{name}</span>
           </h2>
-          <h2 className="text-xl font-semibold">
-            <span className="text-[#606060]">{brand}</span>
-          </h2>
+          <Link to={`/category/${brand}`}>
+            <h2 className="text-xl font-semibold">
+              <span className="text-[#d64949]">{brand}</span>
+            </h2>
+          </Link>
         </div>
         <div className="flex justify-center mb-3 gap-3">
           <Link to={`/details/${_id}`}>
@@ -47,7 +49,6 @@ const ShopCard = ({ produts }) => {
               <img src="./favorite_border.svg" className="w-6 mx-auto" alt="" />
             </div>
           </Link>
-          
         </div>
       </div>
     );

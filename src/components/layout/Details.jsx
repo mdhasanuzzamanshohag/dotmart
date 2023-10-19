@@ -31,9 +31,11 @@ const Details = () => {
             <h2 className="text-xl font-semibold my-1">
               <span className="text-[#606060]">{name}</span>
             </h2>
-            <h2 className="text-xl font-semibold my-1">
-              <span className="text-[#606060]">{brand}</span>
-            </h2>
+            <Link to={`/category/${brand}`}>
+              <h2 className="text-xl font-semibold">
+                <span className="text-[#d64949]">{brand}</span>
+              </h2>
+            </Link>
             <h2 className="text-xl font-semibold my-1">
               <span className="text-[#606060]">{type}</span>
             </h2>

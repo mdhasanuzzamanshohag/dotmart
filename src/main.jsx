@@ -3,6 +3,7 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Addproduct from './components/layout/Addproduct';
+import Category from './components/layout/Category';
 import Details from './components/layout/Details';
 import Home from './components/home/Home';
 import React from 'react'
@@ -41,6 +42,12 @@ const router = createBrowserRouter([
         element: <Details />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/details/${params.id}`),
+      },
+      {
+        path: "/category/:brand",
+        element: <Category />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.brand}`),
       },
     ],
   },

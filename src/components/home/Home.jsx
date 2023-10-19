@@ -1,10 +1,11 @@
 import { FaChevronRight, FaEnvelope, FaThumbsUp } from "react-icons/fa";
-import { Link, useLoaderData } from "react-router-dom";
+
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
 
     const brand = useLoaderData();
-    console.log(brand);
+  const { banner_img } = brand;
     
     return (
       <div className="w-[80%] mx-auto">

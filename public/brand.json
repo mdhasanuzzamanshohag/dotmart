@@ -1,32 +1,38 @@
 [
   {
     "Id": "1",
-    "brand_name": "Apple",
-    "brand_logo": "https://i.ibb.co/bvP9VQH/1685279753620.png"
+    "brand": "Apple",
+    "brand_logo": "https://i.ibb.co/bvP9VQH/1685279753620.png",
+    "banner_img": "https://i.ibb.co/bvP9VQH/1685279753620.png"
   },
   {
     "Id": "2",
-    "brand_name": "Samsung",
-    "brand_logo": "https://i.ibb.co/tcW7SNV/samsung-group-logo-brandlogos-net-mbvij-512x512.png"
+    "brand": "Samsung",
+    "brand_logo": "https://i.ibb.co/tcW7SNV/samsung-group-logo-brandlogos-net-mbvij-512x512.png",
+    "banner_img": "https://i.ibb.co/bvP9VQH.png"
   },
   {
     "Id": "3",
-    "brand_name": "Sony",
-    "brand_logo": "https://i.ibb.co/swCq2zv/Sony-logo-svg.png"
+    "brand": "Sony",
+    "brand_logo": "https://i.ibb.co/swCq2zv/Sony-logo-svg.png",
+    "banner_img": "https://i.ibb.co/bvP9VQH.png"
   },
   {
     "Id": "4",
-    "brand_name": "Google",
-    "brand_logo": "https://i.ibb.co/0YqXF35/Google-logo.png"
+    "brand": "Google",
+    "brand_logo": "https://i.ibb.co/0YqXF35/Google-logo.png",
+    "banner_img": "https://i.ibb.co/bvP9VQH.png"
   },
   {
     "Id": "5",
-    "brand_name": "Intel",
-    "brand_logo": "https://i.ibb.co/T1H6hvG/Intel-logo-2022.png"
+    "brand": "Intel",
+    "brand_logo": "https://i.ibb.co/T1H6hvG/Intel-logo-2022.png",
+    "banner_img": "https://i.ibb.co/bvP9VQH.png"
   },
   {
     "Id": "6",
-    "brand_name": "Xiomi",
-    "brand_logo": "https://i.ibb.co/x8McYTN/kisspng-xiaomi-mi-max-logo-brand-smartphone-5c9d9b2012d310-2901199615538327360771-removebg-preview.png"
+    "brand": "Xiomi",
+    "brand_logo": "https://i.ibb.co/x8McYTN/kisspng-xiaomi-mi-max-logo-brand-smartphone-5c9d9b2012d310-2901199615538327360771-removebg-preview.png",
+    "banner_img": "https://i.ibb.co/bvP9VQH.png"
   }
 ]
