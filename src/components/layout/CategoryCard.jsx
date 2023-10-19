@@ -6,6 +6,31 @@ import Swal from "sweetalert2";
 const CategoryCard = ({ data1 }) => {
   const { img, brand, name, type, price, description, rating, _id } = data1;
 
+  const handleCard = (img, brand, name, type, price, description, rating) => {
+    const myCard = { img, brand, name, type, price, description, rating };
+    console.log(myCard);
+
+    fetch("http://localhost:5000/favourite", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(myCard),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Favourite Item Added Successfully",
+            icon: "success",
+            confirmButtonText: "Close",
+          });
+        }
+      });
+  };
+  
   return (
     <div className="flex flex-col justify-center  gap-6 rounded-xl bg-[#DEE2E7]">
       <img src={img} className="rounded-lg w-52 h-52 mx-auto my-4" alt="" />
@@ -43,11 +68,14 @@ const CategoryCard = ({ data1 }) => {
             <FaPen className="m-auto"></FaPen>
           </div>
         </Link>
-        <Link to={`/favourite/${_id}`}>
-          <div className="bg-[#3C393B] mb-2 h-10 w-10 flex items-center rounded-md">
-            <img src="../favorite_border.svg" className="w-6 mx-auto" alt="" />
-          </div>
-        </Link>
+        <div
+          onClick={() =>
+            handleCard(img, brand, name, type, price, description, rating)
+          }
+          className="bg-[#3C393B] mb-2 h-10 w-10 flex items-center rounded-md"
+        >
+          <img src="../favorite_border.svg" className="w-6 mx-auto" alt="" />
+        </div>
       </div>
     </div>
   );

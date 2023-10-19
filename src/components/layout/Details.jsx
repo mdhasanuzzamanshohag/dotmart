@@ -1,4 +1,4 @@
-import { FaEye, FaPen, FaTrash } from "react-icons/fa";
+import { FaEye, FaPen } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";

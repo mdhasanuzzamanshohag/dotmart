@@ -6,12 +6,14 @@ import Addproduct from './components/layout/Addproduct';
 import Category from './components/layout/Category';
 import Details from './components/layout/Details';
 import Home from './components/home/Home';
+import Login from './components/home/Login';
 import MyCard from './components/layout/MyCard';
 import NotFound from './components/home/NotFound';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from './components/Root';
 import Shop from './components/layout/Shop';
+import Signup from './components/home/Signup';
 import UpdateProduct from './components/layout/UpdateProduct';
 
 const router = createBrowserRouter([
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
         element: <Category />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/category/${params.brand}`),
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
     ],
   },

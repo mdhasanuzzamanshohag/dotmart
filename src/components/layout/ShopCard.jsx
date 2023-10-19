@@ -1,4 +1,5 @@
 import { FaEye, FaPen } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
 
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -22,12 +23,7 @@ const ShopCard = ({ produts }) => {
       .then(data => {
         console.log(data);
         if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "Favourite Item Added Successfully",
-            icon: "success",
-            confirmButtonText: "Close",
-          });
+          toast.success("Lorem ipsum dolor");
         }
     })
     
