@@ -3,6 +3,7 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Addproduct from './components/layout/Addproduct';
+import Details from './components/layout/Details';
 import Home from './components/home/Home';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -32,8 +33,14 @@ const router = createBrowserRouter([
       {
         path: "/updateproduct/:id",
         element: <UpdateProduct />,
-        loader: ({params}) =>
+        loader: ({ params }) =>
           fetch(`http://localhost:5000/product/${params.id}`),
+      },
+      {
+        path: "/details/:id",
+        element: <Details />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/details/${params.id}`),
       },
     ],
   },
