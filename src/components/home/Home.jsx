@@ -1,5 +1,6 @@
 import { FaChevronRight, FaEnvelope, FaThumbsUp } from "react-icons/fa";
 
+import BrandCard from "./BrandCard";
 import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
@@ -158,8 +159,10 @@ const Home = () => {
               Our Top Seller Brands
             </h2>
           </div>
-          <div className="grid gap-8 my-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-            {brand.length}
+          <div className="grid gap-8 my-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {brand.map((comp) => (
+              <BrandCard key={comp.Id} comp={comp}></BrandCard>
+            ))}
           </div>
         </div>
 
@@ -179,6 +182,41 @@ const Home = () => {
             </figure>
             <div className="card-body items-start">
               <p className="card-title">Quick Delivery</p>
+            </div>
+          </div>
+        </div>
+
+        {/* People Say About DotMart */}
+        <div className="my-6 md:my-10">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center md:py-4">
+            People Say About DotMart
+          </h2>
+          <p className="text-lg text-center pb-2 py-2">100+ unique product</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-6">
+            <div className="card justify-center items-center text-center md:text-start flex-col md:flex-row card-side text-white bg-[#282664] shadow-xl py-4">
+              <figure className="w-[40%] md:w-[80%]">
+                <img src="/review1.webp" alt="Movie" />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title text-slate-400">
+                  Having knowledge of the best tools and services is crucial to
+                  succeed in today’s digital world.
+                </h2>
+                <p className="text-teal-300">Nila Jahan</p>
+              </div>
+            </div>
+
+            <div className="card justify-center items-center text-center md:text-start flex-col md:flex-row card-side text-white bg-[#282664] shadow-xl py-4">
+              <figure className="w-[40%] md:w-[80%]">
+                <img src="/review2.webp" alt="Movie" />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title text-slate-400">
+                  This website helped me a lot in finding the most suitable
+                  shipping company for my amazon business.
+                </h2>
+                <p className="text-teal-300">Courtney Henry</p>
+              </div>
             </div>
           </div>
         </div>

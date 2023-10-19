@@ -4,11 +4,11 @@ const Category = () => {
 
     const data = useLoaderData();
     
-    const { name } = data;
+    const { brand } = data;
     
     return (
         <div>
-            <h2>{ name}</h2>
+            <h2>{ brand}</h2>
         </div>
     );
 };

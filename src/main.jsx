@@ -6,6 +6,7 @@ import Addproduct from './components/layout/Addproduct';
 import Category from './components/layout/Category';
 import Details from './components/layout/Details';
 import Home from './components/home/Home';
+import NotFound from './components/home/NotFound';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from './components/Root';
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
