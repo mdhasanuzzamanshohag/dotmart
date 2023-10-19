@@ -9,7 +9,7 @@ const NotFound = () => {
         <div className="hero w-[80%] mx-auto min-h-screen">
           <div className="hero-content flex-col md:flex-row gap-4">
             <img
-              src="./notfound.svg"
+              src="/notfound.svg"
               className="max-w-sm rounded-lg shadow-2xl w-[50%]"
             />
             <div className="w-[50%] flex flex-col items-center">

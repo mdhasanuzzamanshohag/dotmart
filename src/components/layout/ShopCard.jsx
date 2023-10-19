@@ -31,6 +31,9 @@ const ShopCard = ({ produts }) => {
               <span className="text-[#d64949]">{brand}</span>
             </h2>
           </Link>
+          <h2 className="text-xl font-semibold my-1">
+            <span className="text-[#606060]">{type}</span>
+          </h2>
         </div>
         <div className="flex justify-center mb-3 gap-3">
           <Link to={`/details/${_id}`}>
