@@ -8,6 +8,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from './components/Root';
 import Shop from './components/layout/Shop';
+import UpdateProduct from './components/layout/UpdateProduct';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
         path: "/shop",
         element: <Shop />,
         loader: () => fetch("http://localhost:5000/product"),
+      },
+      {
+        path: "/updateproduct/:id",
+        element: <UpdateProduct />,
+        loader: ({params}) =>
+          fetch(`http://localhost:5000/product/${params.id}`),
       },
     ],
   },

@@ -120,7 +120,7 @@ const Addproduct = () => {
               <span className="label-text">Rating</span>
             </label>
             <input
-              type="rating"
+              type="text"
               placeholder="rating"
               name="rating"
               required
