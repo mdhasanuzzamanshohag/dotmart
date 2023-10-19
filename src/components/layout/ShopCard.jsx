@@ -1,4 +1,4 @@
-import { FaEye, FaPen, FaTrash } from "react-icons/fa";
+import { FaEye, FaPen } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -7,7 +7,31 @@ const ShopCard = ({ produts }) => {
     
     const { img, brand, name, type, price, description, rating, _id } = produts;
     
-  
+  const handleCard = (img, brand, name, type, price, description, rating) => {
+    const myCard = { img, brand, name, type, price, description, rating };
+    console.log(myCard);
+    
+    fetch("http://localhost:5000/favourite", {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(myCard)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Favourite Item Added Successfully",
+            icon: "success",
+            confirmButtonText: "Close",
+          });
+        }
+    })
+    
+  };
  
   
     return (
@@ -47,11 +71,15 @@ const ShopCard = ({ produts }) => {
               <FaPen className="m-auto"></FaPen>
             </div>
           </Link>
-          <Link to={`/favourite/${_id}`}>
-            <div className="bg-[#3C393B] mb-2 h-10 w-10 flex items-center rounded-md">
-              <img src="./favorite_border.svg" className="w-6 mx-auto" alt="" />
-            </div>
-          </Link>
+
+          <div
+            onClick={() =>
+              handleCard(img, brand, name, type, price, description, rating)
+            }
+            className="bg-[#3C393B] mb-2 h-10 w-10 flex items-center rounded-md"
+          >
+            <img src="./favorite_border.svg" className="w-6 mx-auto" alt="" />
+          </div>
         </div>
       </div>
     );

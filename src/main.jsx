@@ -6,6 +6,7 @@ import Addproduct from './components/layout/Addproduct';
 import Category from './components/layout/Category';
 import Details from './components/layout/Details';
 import Home from './components/home/Home';
+import MyCard from './components/layout/MyCard';
 import NotFound from './components/home/NotFound';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
         path: "/shop",
         element: <Shop />,
         loader: () => fetch("http://localhost:5000/product"),
+      },
+      {
+        path: "/mycart",
+        element: <MyCard />,
+        loader: () => fetch("http://localhost:5000/favourite"),
       },
       {
         path: "/updateproduct/:id",
