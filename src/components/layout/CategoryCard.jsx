@@ -1,32 +1,28 @@
-import { FaEye, FaPen, FaTrash } from "react-icons/fa";
+import { FaEye, FaPen } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const CategoryCard = ({ data1 }) => {
   const { img, brand, name, type, price, description, rating, _id } = data1;
 
   const handleCard = (img, brand, name, type, price, description, rating) => {
     const myCard = { img, brand, name, type, price, description, rating };
-    console.log(myCard);
 
-    fetch("http://localhost:5000/favourite", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(myCard),
-    })
+    fetch(
+      "https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/favourite",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(myCard),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "Favourite Item Added Successfully",
-            icon: "success",
-            confirmButtonText: "Close",
-          });
+          toast.success("Successfully Added!");
         }
       });
   };

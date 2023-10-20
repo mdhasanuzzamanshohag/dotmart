@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router-dom";
 const Category = () => {
 
     const data = useLoaderData();
-    console.log(data);
     
     return (
       <div className="w-[80%] mx-auto">

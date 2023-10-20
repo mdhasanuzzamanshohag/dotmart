@@ -1,16 +1,18 @@
 import { FaEye, FaPen } from "react-icons/fa";
-import { ToastContainer, toast } from "react-toastify";
 
+import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+import toast from "react-hot-toast";
+import { useContext } from "react";
 
 const ShopCard = ({ produts }) => {
+
+  const { user } = useContext(AuthContext);
     
     const { img, brand, name, type, price, description, rating, _id } = produts;
     
   const handleCard = (img, brand, name, type, price, description, rating) => {
     const myCard = { img, brand, name, type, price, description, rating };
-    console.log(myCard);
     
     fetch("http://localhost:5000/favourite", {
       method: 'POST',
@@ -23,7 +25,7 @@ const ShopCard = ({ produts }) => {
       .then(data => {
         console.log(data);
         if (data.insertedId) {
-          toast.success("Lorem ipsum dolor");
+          toast.success("Successfully Added!");
         }
     })
     
@@ -68,14 +70,16 @@ const ShopCard = ({ produts }) => {
             </div>
           </Link>
 
-          <div
-            onClick={() =>
-              handleCard(img, brand, name, type, price, description, rating)
-            }
-            className="bg-[#3C393B] mb-2 h-10 w-10 flex items-center rounded-md"
-          >
-            <img src="./favorite_border.svg" className="w-6 mx-auto" alt="" />
-          </div>
+          {user && (
+            <div
+              onClick={() =>
+                handleCard(img, brand, name, type, price, description, rating)
+              }
+              className="bg-[#3C393B] mb-2 h-10 w-10 flex items-center rounded-md"
+            >
+              <img src="./favorite_border.svg" className="w-6 mx-auto" alt="" />
+            </div>
+          )}
         </div>
       </div>
     );

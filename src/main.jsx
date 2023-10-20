@@ -3,12 +3,14 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Addproduct from './components/layout/Addproduct';
+import AuthProvider from './components/provider/AuthProvider';
 import Category from './components/layout/Category';
 import Details from './components/layout/Details';
 import Home from './components/home/Home';
 import Login from './components/home/Login';
 import MyCard from './components/layout/MyCard';
 import NotFound from './components/home/NotFound';
+import PrivateRouter from './components/home/PrivateRouter';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from './components/Root';
@@ -29,35 +31,67 @@ const router = createBrowserRouter([
       },
       {
         path: "/addproduct",
-        element: <Addproduct />,
+        element: (
+          <PrivateRouter>
+            <Addproduct />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/shop",
         element: <Shop />,
-        loader: () => fetch("http://localhost:5000/product"),
+        loader: () =>
+          fetch(
+            "https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/product"
+          ),
       },
       {
         path: "/mycart",
-        element: <MyCard />,
-        loader: () => fetch("http://localhost:5000/favourite"),
+        element: (
+          <PrivateRouter>
+            <MyCard />
+          </PrivateRouter>
+        ),
+        loader: () =>
+          fetch(
+            "https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/favourite"
+          ),
       },
       {
         path: "/updateproduct/:id",
-        element: <UpdateProduct />,
+        element: (
+          <PrivateRouter>
+            <UpdateProduct />
+          </PrivateRouter>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(
+            `https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/product/${params.id}`
+          ),
       },
       {
         path: "/details/:id",
-        element: <Details />,
+        element: (
+          <PrivateRouter>
+            <Details />
+          </PrivateRouter>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/details/${params.id}`),
+          fetch(
+            `https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/details/${params.id}`
+          ),
       },
       {
         path: "/category/:brand",
-        element: <Category />,
+        element: (
+          <PrivateRouter>
+            <Category />
+          </PrivateRouter>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.brand}`),
+          fetch(
+            `https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/category/${params.brand}`
+          ),
       },
       {
         path: "/login",
@@ -74,6 +108,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

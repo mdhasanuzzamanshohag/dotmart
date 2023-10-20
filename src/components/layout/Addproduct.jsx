@@ -12,24 +12,26 @@ const Addproduct = () => {
     const description = form.description.value;
     const rating = form.rating.value;
     const newProduct = { img, brand, name, type, price, description, rating };
-    fetch("http://localhost:5000/product", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    })
+    fetch(
+      "https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/product",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-          console.log(data);
-          if (data.insertedId) {
-            Swal.fire({
-              title: "Success!",
-              text: "Product Added Successfully",
-              icon: "success",
-              confirmButtonText: "Close",
-            });
-          }
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Product Added Successfully",
+            icon: "success",
+            confirmButtonText: "Close",
+          });
+        }
       });
   };
 

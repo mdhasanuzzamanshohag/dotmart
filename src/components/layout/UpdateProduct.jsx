@@ -17,13 +17,16 @@ const UpdateProduct = () => {
       const description = form.description.value;
       const rating = form.rating.value;
       const updateProduct = { img, brand, name, type, price, description, rating };
-      fetch(`http://localhost:5000/product/${_id}`, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updateProduct),
-      })
+      fetch(
+        `https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/${_id}`,
+        {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updateProduct),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
