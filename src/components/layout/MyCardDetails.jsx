@@ -69,12 +69,6 @@ const MyCardDetails = ({ data1, products, setProducts }) => {
           </div>
         </Link>
 
-        <Link to={`/updateproduct/${_id}`}>
-          <div className="bg-[#3577F0] mb-2 h-10 w-10 flex items-center rounded-md text-white">
-            <FaPen className="m-auto"></FaPen>
-          </div>
-        </Link>
-
         <div
           onClick={() => handleDelete(_id)}
           className="bg-[#f035e0] mb-2 h-10 w-10 flex items-center rounded-md text-white"
