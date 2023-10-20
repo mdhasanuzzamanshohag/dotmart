@@ -16,9 +16,12 @@ const MyCardDetails = ({ data1, products, setProducts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/mycard/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/mycard/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -26,9 +29,9 @@ const MyCardDetails = ({ data1, products, setProducts }) => {
                 "Deleted!",
                 "Your product has been deleted.",
                 "success"
-                )
-                const remain = products.filter(pro => pro._id !== _id);
-                setProducts(remain);
+              );
+              const remain = products.filter((pro) => pro._id !== _id);
+              setProducts(remain);
             }
           });
       }
