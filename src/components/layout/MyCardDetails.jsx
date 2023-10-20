@@ -63,12 +63,6 @@ const MyCardDetails = ({ data1, products, setProducts }) => {
         </h2>
       </div>
       <div className="flex justify-center mb-3 gap-3">
-        <Link to={`/details/${_id}`}>
-          <div className="bg-[#FE497C] mb-2 h-10 w-10 flex items-center rounded-md text-white">
-            <FaEye className="m-auto"></FaEye>
-          </div>
-        </Link>
-
         <div
           onClick={() => handleDelete(_id)}
           className="bg-[#f035e0] mb-2 h-10 w-10 flex items-center rounded-md text-white"
