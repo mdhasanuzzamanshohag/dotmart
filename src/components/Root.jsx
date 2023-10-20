@@ -1,5 +1,3 @@
-import "./Root.css";
-
 import Footer from "./home/Footer";
 import Navbar from "./home/Navbar";
 import { Outlet } from "react-router-dom";

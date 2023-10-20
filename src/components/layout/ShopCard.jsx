@@ -14,20 +14,23 @@ const ShopCard = ({ produts }) => {
   const handleCard = (img, brand, name, type, price, description, rating) => {
     const myCard = { img, brand, name, type, price, description, rating };
     
-    fetch("http://localhost:5000/favourite", {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(myCard)
-    })
-      .then(res => res.json())
-      .then(data => {
+    fetch(
+      "https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/favourite",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(myCard),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         if (data.insertedId) {
           toast.success("Successfully Added!");
         }
-    })
+      });
     
   };
  
