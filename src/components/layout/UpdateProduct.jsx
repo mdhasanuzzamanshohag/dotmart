@@ -18,7 +18,7 @@ const UpdateProduct = () => {
       const rating = form.rating.value;
       const updateProduct = { img, brand, name, type, price, description, rating };
       fetch(
-        `https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/${_id}`,
+        `https://dotmart-store-server-5rn8ph2vr-mdhasanuzzamanshohag.vercel.app/product/${_id}`,
         {
           method: "PUT",
           headers: {

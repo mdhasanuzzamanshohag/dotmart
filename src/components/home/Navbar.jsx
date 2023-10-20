@@ -2,9 +2,13 @@ import { Link, NavLink } from "react-router-dom";
 
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
-import { useContext } from "react";
+import { useContext, } from "react";
 
 const Navbar = () => {
+
+
+
+  
   
   const { user, logOut } = useContext(AuthContext); 
   
@@ -19,8 +23,11 @@ const Navbar = () => {
       });
   };
   
+  
+  
     return (
       <div className="navbar bg-base-100 w-[80%] mx-auto">
+        
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -87,7 +94,7 @@ const Navbar = () => {
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src={user.photoURL} alt={user.displayName} />
+                  <img src={user.photoURL} />
                 </div>
               </label>
               <ul
@@ -95,8 +102,8 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <Link className="btn btn-sm my-1 text-base" to="/mycart">
-                    <button className="my-auto">My Card</button>
+                  <Link className="btn btn-sm my-1 text-base">
+                    <button className="my-auto">{user.displayName}</button>
                   </Link>
                 </li>
                 <li>

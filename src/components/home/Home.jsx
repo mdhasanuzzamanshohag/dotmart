@@ -6,7 +6,6 @@ import { useLoaderData } from "react-router-dom";
 const Home = () => {
 
     const brand = useLoaderData();
-  const { banner_img } = brand;
     
     return (
       <div className="w-[80%] mx-auto">

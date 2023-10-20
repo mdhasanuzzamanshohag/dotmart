@@ -10,25 +10,25 @@ const Category = () => {
         <div className="carousel w-full">
           <div id="item1" className="carousel-item w-full">
             <img
-              src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
+              src="https://i.ibb.co/vvsZQPn/download.jpg"
               className="w-full"
             />
           </div>
           <div id="item2" className="carousel-item w-full">
             <img
-              src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
+              src="https://i.ibb.co/sJMjSdg/download.jpg"
               className="w-full"
             />
           </div>
           <div id="item3" className="carousel-item w-full">
             <img
-              src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
+              src="https://www.computersmobile.com.au/wp-content/uploads/2016/11/slider1-1200x480.jpg"
               className="w-full"
             />
           </div>
           <div id="item4" className="carousel-item w-full">
             <img
-              src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
+              src="https://i.ibb.co/sJMjSdg/download.jpg"
               className="w-full"
             />
           </div>

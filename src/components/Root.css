@@ -1,0 +1,8 @@
+/* You can use daisyUI classes to style your components */
+.light {
+  @apply bg-white text-black;
+}
+
+.dark {
+  @apply bg-gray-900 text-white;
+}
